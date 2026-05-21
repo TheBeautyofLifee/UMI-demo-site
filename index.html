@@ -22,7 +22,7 @@
             --text-muted: #4A5568;
             --shadow: 0 10px 25px -5px rgba(35, 56, 143, 0.08), 0 8px 10px -6px rgba(35, 56, 143, 0.08);
             --shadow-hover: 0 20px 30px -10px rgba(35, 56, 143, 0.18);
-            --radius: 4px;
+            --radius: 3px;
             --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -77,6 +77,12 @@
             text-transform: uppercase;
         }
 
+        h2.card-name {
+            width: 220px;
+            font-size: 18px;
+
+        }
+
         .description {
             font-size: 1.15rem;
             line-height: 1.6;
@@ -93,15 +99,19 @@
         }
 
         .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
             width: 100%;
         }
 
         .card {
             background: var(--card-bg);
             border-radius: var(--radius);
+            max-height: 250px;
+            width: 250px;
             padding: 2.5rem 1.75rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -113,6 +123,13 @@
             position: relative;
             overflow: hidden;
         }
+      
+         div.card:nth-of-type(1) {
+             height: 250px;
+             width: 250px;
+        }
+
+
 
         /* Subtle top line indicator on cards matching branding */
         .card::before {
@@ -197,6 +214,7 @@
             background: rgba(35, 56, 143, 0.04);
             color: var(--primary);
             flex: 1;
+            padding: 0;
         }
 
         .btn-secondary:hover {
@@ -229,7 +247,7 @@
             
             <h1>DRIMS DEMO</h1>
             <p class="description">
-                Welcome to the Digital Research Information Management System (DRIMS), a web-based platform designed to streamline, and automate research-related academic workflows for postgraduates studied at UMI.
+                Welcome to the Digital Research Information Management System (DRIMS), a platform designed to streamline, and automate research-related academic workflows for postgraduates at UMI.
             </p>
         </div>
     </header>
@@ -282,14 +300,23 @@
         // Copy function utilizing modern Clipboard Web API
         function copyLink(text, buttonElement) {
             navigator.clipboard.writeText(text).then(() => {
-                const originalText = buttonElement.innerText;
-                buttonElement.innerText = "Copied!";
+                // Select the icon element inside the clicked button
+                const iconElement = buttonElement.querySelector('i');
+                
+                // Save the original classes so we can restore them later
+                const originalClasses = iconElement.className;
+                
+                // Apply the checkmark icon and visual active style class
+                iconElement.className = 'fa-solid fa-check';
                 buttonElement.classList.add('copied');
+                buttonElement.setAttribute('title', 'Copied!');
                 buttonElement.disabled = true;
 
+                // Revert back to original copy icon state after 1.8 seconds
                 setTimeout(() => {
-                    buttonElement.innerText = originalText;
+                    iconElement.className = originalClasses;
                     buttonElement.classList.remove('copied');
+                    buttonElement.setAttribute('title', 'Copy Link');
                     buttonElement.disabled = false;
                 }, 1800);
             }).catch(err => {
