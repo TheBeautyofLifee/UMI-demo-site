@@ -78,8 +78,8 @@
         }
 
         h2.card-name {
-            width: 220px;
-            font-size: 18px;
+            width: 240px;
+            font-size: 20px;
 
         }
 
@@ -93,7 +93,7 @@
 
         /* Content Area */
         .main-content {
-            max-width: 1200px;
+            max-width: 1280px;
             width: 100%;
             padding: 4rem 1.5rem;
         }
@@ -110,9 +110,9 @@
         .card {
             background: var(--card-bg);
             border-radius: var(--radius);
-            max-height: 250px;
-            width: 250px;
-            padding: 2.5rem 1.75rem;
+            height: 260px;
+            width: 290px;
+            padding: 2.5rem 1.4rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
             display: flex;
@@ -124,10 +124,10 @@
             overflow: hidden;
         }
       
-         div.card:nth-of-type(1) {
+         /* div.card:nth-of-type(1) {
              height: 250px;
              width: 250px;
-        }
+        } */
 
 
 
@@ -214,7 +214,9 @@
             background: rgba(35, 56, 143, 0.04);
             color: var(--primary);
             flex: 1;
-            padding: 0;
+            gap: 10px;
+            text-align: left;
+            justify-content: center;
         }
 
         .btn-secondary:hover {
@@ -259,7 +261,7 @@
                 <h2 class="card-name">Research Center Portal</h2>
                 <div class="actions">
                     <a href="https://drimrcdemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimrcdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i></button>
+                    <button class="btn btn-secondary" onclick="copyLink('https://drimrcdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i>Copy</button>
                 </div>
             </div>
 
@@ -268,7 +270,7 @@
                 <h2 class="card-name">School Portal</h2>
                 <div class="actions">
                     <a href="https://drimschooldemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimschooldemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i></button>
+                    <button class="btn btn-secondary" onclick="copyLink('https://drimschooldemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i> Copy</button>
                 </div>
             </div>
 
@@ -277,7 +279,7 @@
                 <h2 class="card-name">Staff Portal</h2>
                 <div class="actions">
                     <a href="https://drimstaffdemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimstaffdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i></button>
+                    <button class="btn btn-secondary" onclick="copyLink('https://drimstaffdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i>Copy</button>
                 </div>
             </div>
 
@@ -286,7 +288,7 @@
                 <h2 class="card-name">Student Portal</h2>
                 <div class="actions">
                     <a href="https://drimstudentdemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimstudentdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i></button>
+                    <button class="btn btn-secondary" onclick="copyLink('https://drimstudentdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i>Copy</button>
                 </div>
             </div>
         </div>
@@ -300,21 +302,18 @@
         // Copy function utilizing modern Clipboard Web API
         function copyLink(text, buttonElement) {
             navigator.clipboard.writeText(text).then(() => {
-                // Select the icon element inside the clicked button
-                const iconElement = buttonElement.querySelector('i');
+                // Store original template configuration
+                const originalMarkup = buttonElement.innerHTML;
                 
-                // Save the original classes so we can restore them later
-                const originalClasses = iconElement.className;
-                
-                // Apply the checkmark icon and visual active style class
-                iconElement.className = 'fa-solid fa-check';
+                // Set the new layout containing both the checkmark icon and the "Copied!" string literal
+                buttonElement.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
                 buttonElement.classList.add('copied');
                 buttonElement.setAttribute('title', 'Copied!');
                 buttonElement.disabled = true;
 
-                // Revert back to original copy icon state after 1.8 seconds
+                // Revert safely back to default configuration after timeout expires
                 setTimeout(() => {
-                    iconElement.className = originalClasses;
+                    buttonElement.innerHTML = originalMarkup;
                     buttonElement.classList.remove('copied');
                     buttonElement.setAttribute('title', 'Copy Link');
                     buttonElement.disabled = false;
