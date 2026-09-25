@@ -3,90 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMI DRIMS DEMO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>DRIMS DEMO - UMI</title>
+
+    <!-- Favicon Links using icon.png -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/icon.png">
+
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <link rel="stylesheet" href="/public/style.css">
+    <script src="/main.js"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+<main class="main-wrapper">
 
-    <header class="hero-banner">
+    <!-- Header & Curved Hero Section -->
+    <!-- <header class="hero-banner">
         <div class="hero-container">
             <img src="/public/logo.png" alt="Uganda Management Institute Logo" class="umi-logo">
-            <h1>DRIMS DEMO</h1>
+            <h1 class="outline-title">DRIMS Demo Environment</h1>
+            <p class="hero-subtitle">Digitized Research Information Management System</p>
             <p class="description">
-                Welcome to the Digital Research Information Management System (DRIMS), a platform designed to streamline, and automate research-related academic workflows for postgraduates at UMI.
+                Welcome to the official training and workshop demonstration platform for postgraduates, faculty, and research center administrators at UMI.
             </p>
         </div>
-        <div class="nav-menu">
-          <a href="index.html" class="btn-view-docs active" title="Home Dashboard">
-            Home
-          </a>
-          <a href="docs/index.html" class="btn-view-docs" title="Open Documentation">
-            Docs
-          </a>
+
+        <svg class="hero-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 0C240 96 600 120 720 120C840 120 1200 96 1440 0V120H0V0Z" fill="currentColor"></path>
+        </svg>
+    </header> -->
+
+      <!-- Top Navigation Header -->
+    <header class="top-nav-header">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <img src="../public/logo.png" alt="Uganda Management Institute Logo" class="nav-logo">
+            </a>
+            <nav class="nav-menu">
+                <a href="/index_2.html" class="nav-link active">HOME</a>
+                <a href="docs.html" class="nav-link">DOCS</a>
+            </nav>
         </div>
     </header>
 
-    <main class="main-content">
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-microscope"></i></div>
-                <h2 class="card-name">Research Center Portal</h2>
-                <div class="actions">
-                    <a href="https://drimrcdemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimrcdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i> Copy</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-school"></i></div>
-                <h2 class="card-name">School Portal</h2>
-                <div class="actions">
-                    <a href="https://drimschooldemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimschooldemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i> Copy</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
-                <h2 class="card-name">Staff Portal</h2>
-                <div class="actions">
-                    <a href="https://drimstaffdemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimstaffdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i> Copy</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h2 class="card-name">Student Portal</h2>
-                <div class="actions">
-                    <a href="https://drimstudentdemo.netlify.app" target="_blank" class="btn btn-primary">Go to Portal</a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drimstudentdemo.netlify.app', this)"><i class="fa-solid fa-copy fa-lg"></i> Copy</button>
-                </div>
-            </div>
+    <section class="hero-banner">
+        <div class="hero-container">
+            <h1 class="outline-title">DRIMS Demo Environment</h1>
+            <p class="hero-subtitle">Digitized Research Information Management System</p>
+            <p class="description">
+                Welcome to the official training and workshop demonstration platform for postgraduates, faculty, and research center administrators at UMI.
+            </p>
         </div>
+        
+        <!-- Curved Bottom Divider SVG -->
+        <svg class="hero-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 0C240 96 600 120 720 120C840 120 1200 96 1440 0V120H0V0Z" fill="currentColor"></path>
+        </svg>
+    </section>
 
-        <hr class="section-separator">
-
-        <section>
-            <h2 class="section-title">User Manuals & Technical Docs</h2>
-            <p class="section-subtitle">Access interactive step-by-step user manuals and reference workflows for the DRIMS platform.</p>
+    <main class="main-content">
+        <!-- Demo Portals Grid Section -->
+        <section class="portal-grid-container">
             
-            <div class="manuals-container">
-                <div class="manual-card">
+            <!-- Student Portal Card -->
+            <div class="portal-main-card shadow-card">
+                <div class="portal-icon-wrapper">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h2 class="portal-headline">Student Portal</h2>
+                <p class="portal-subheadline">Access postgraduate student proposal submission and milestone tracking.</p>
+                
+                <div class="portal-actions-wrapper">
+                    <a href="https://drimstudentdemo.netlify.app" target="_blank" class="btn btn-primary">
+                        <span>Go to Portal</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <div class="bodyqr-container">
+                        <span class="bodyqr-text">Open to Scan QR code</span>
+                        <button aria-label="Show QR Code" class="btn-copy-action" onclick="openQrModal('https://drimstudentdemo.netlify.app', 'DRIMS Portal')">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staff Portal Card -->
+            <div class="portal-main-card shadow-card">
+                <div class="portal-icon-wrapper">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <h2 class="portal-headline">Staff Portal</h2>
+                <p class="portal-subheadline">Access supervisor reviews, candidate tracking, and evaluation dashboards.</p>
+                
+                <div class="portal-actions-wrapper">
+                    <a href="https://drimstaffdemo.netlify.app" target="_blank" class="btn btn-primary">
+                        <span>Go to Portal</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <div class="bodyqr-container">
+                        <span class="bodyqr-text">Open to Scan QR code</span>
+                        <button aria-label="Show QR Code" class="btn-copy-action" onclick="openQrModal('https://drimstaffdemo.netlify.app', 'DRIMS Portal')">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Center Portal Card -->
+            <div class="portal-main-card shadow-card">
+                <div class="portal-icon-wrapper">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+                <h2 class="portal-headline">Research Center Portal</h2>
+                <p class="portal-subheadline">Access the demo environment for research projects and center administration.</p>
+                
+                <div class="portal-actions-wrapper">
+                    <a href="https://drimrcdemo.netlify.app" target="_blank" class="btn btn-primary">
+                        <span>Go to Portal</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <div class="bodyqr-container">
+                        <span class="bodyqr-text">Open to Scan QR code</span>
+                        <button aria-label="Show QR Code" class="btn-copy-action" onclick="openQrModal('https://drimrcdemo.netlify.app', 'DRIMS Portal')">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Portal Card -->
+            <div class="portal-main-card shadow-card">
+                <div class="portal-icon-wrapper">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+                <h2 class="portal-headline">School Portal</h2>
+                <p class="portal-subheadline">Access academic school-level workflows, defense coordination, and reviews.</p>
+                
+                <div class="portal-actions-wrapper">
+                    <a href="https://drimschooldemo.netlify.app" target="_blank" class="btn btn-primary">
+                        <span>Go to Portal</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <div class="bodyqr-container">
+                        <span class="bodyqr-text">Open to Scan QR code</span>
+                        <button aria-label="Show QR Code" class="btn-copy-action" onclick="openQrModal('https://drimschooldemo.netlify.app', 'DRIMS Portal')">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+
+        <!-- Reference Guides Section -->
+        <section id="guides" class="guides-section">
+            <div class="section-header">
+                <h2 class="section-title">User Manuals</h2>
+                <p class="section-subtitle">Access interactive step-by-step user manuals and reference workflows</p>
+            </div>
+
+            <div class="manuals-grid">
+                <div class="manual-card shadow-card">
                     <div class="manual-info">
-                        <div class="manual-file-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <i class="fa-solid fa-book-bookmark manual-file-icon"></i>
                         <div class="manual-meta">
                             <h3>DRIMS Reference Manuals</h3>
-                            <p>Guides for Students, Staff, and Research Center administrators.</p>
+                            <p>Interactive guides for Students, Staff, and Research Center administrators.</p>
+                            <span>Interactive Web Manuals</span>
                         </div>
                     </div>
-                    <a href="docs/index.html" class="btn-main-view-docs" title="Open Documentation">
-                        Open Docs <i class="fa-solid fa-arrow-right"></i>
+                    <a href="/docs.html" aria-label="Open Documentation" class="btn-download">
+                        <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -94,28 +191,28 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Uganda Management Institute (UMI). All rights reserved.</p>
+        <p>&copy; 2026 <a class="company-link" aria-label="UMI official website" href="https://umi.ac.ug/">UMI</a>. All rights reserved.</p>
     </footer>
 
-    <script>
-        function copyLink(text, buttonElement) {
-            navigator.clipboard.writeText(text).then(() => {
-                const originalMarkup = buttonElement.innerHTML;
-                buttonElement.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-                buttonElement.classList.add('copied');
-                buttonElement.setAttribute('title', 'Copied!');
-                buttonElement.disabled = true;
+</main>
 
-                setTimeout(() => {
-                    buttonElement.innerHTML = originalMarkup;
-                    buttonElement.classList.remove('copied');
-                    buttonElement.setAttribute('title', 'Copy Link');
-                    buttonElement.disabled = false;
-                }, 1800);
-            }).catch(err => {
-                console.error('Execution failure on copy utility: ', err);
-            });
-        }
-    </script>
+
+      <!-- QR Code Modal Dialog (Place right before </body>) -->
+    <div id="qrModal" class="modal-backdrop" onclick="closeQrModal(event)">
+    <div class="modal-card shadow-card" onclick="event.stopPropagation()">
+        <button class="modal-close-btn" onclick="closeQrModal()" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-header">
+            <h3 id="modalTitle" class="modal-title">Scan QR Code</h3>
+            <p id="modalSubtitle" class="modal-subtitle">Scan with your mobile camera to launch portal</p>
+        </div>
+        <div class="qr-code-wrapper">
+            <img id="qrCodeImage" src="" alt="Portal QR Code" class="qr-code-img">
+        </div>
+        <div class="modal-footer">
+            <code id="modalUrlDisplay" class="modal-url-text"></code>
+        </div>
+    </div>
 </body>
 </html>
